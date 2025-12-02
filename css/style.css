@@ -1,0 +1,425 @@
+/* ===========================
+   Professional Minimalistic Theme
+   Black & White Design
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: #000000;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+/* ===========================
+   Landing Page
+   =========================== */
+.landing-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000000;
+}
+
+.landing-container {
+    text-align: center;
+    padding: 60px;
+    max-width: 900px;
+}
+
+.landing-content {
+    background: #ffffff;
+    color: #000000;
+    border-radius: 2px;
+    padding: 80px 60px;
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.subtitle {
+    font-size: 1rem;
+    margin-bottom: 60px;
+    opacity: 0.7;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 60px;
+    text-align: left;
+}
+
+.feature {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+.feature-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.feature-desc {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+.enter-button {
+    background: #000000;
+    color: white;
+    border: none;
+    padding: 18px 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #000000;
+}
+
+.enter-button:hover {
+    background: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.info {
+    margin-top: 50px;
+    opacity: 0.6;
+    font-size: 0.75rem;
+    line-height: 1.8;
+    font-weight: 300;
+}
+
+/* ===========================
+   Loading Screen
+   =========================== */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-content {
+    text-align: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 30px;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-content h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.loading-content p {
+    font-size: 0.85rem;
+    opacity: 0.7;
+    font-weight: 300;
+}
+
+/* ===========================
+   App Page
+   =========================== */
+.app-page {
+    background: #000000;
+    overflow: hidden;
+}
+
+.app-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+#webcam {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+#outputCanvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scaleX(-1);
+}
+
+/* ===========================
+   Status Overlay - Top Right
+   =========================== */
+.status-overlay {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px 25px;
+    min-width: 250px;
+    font-family: 'Courier New', monospace;
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+}
+
+.status-item:last-child {
+    margin-bottom: 0;
+}
+
+.status-label {
+    font-weight: 400;
+    margin-right: 20px;
+    opacity: 0.7;
+}
+
+.status-value {
+    font-weight: 400;
+    color: #ffffff;
+}
+
+/* ===========================
+   Control Panel - Bottom
+   =========================== */
+.control-panel {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    display: flex;
+    gap: 1px;
+    background: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.toggle-btn,
+.exit-btn {
+    background: #000000;
+    color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px 25px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.toggle-btn:last-child,
+.exit-btn {
+    border-right: none;
+}
+
+.toggle-btn:hover,
+.exit-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+.toggle-btn.active {
+    background: #ffffff;
+    color: #000000;
+}
+
+.exit-btn {
+    background: #ffffff;
+    color: #000000;
+}
+
+.exit-btn:hover {
+    background: #000000;
+    color: #ffffff;
+}
+
+/* ===========================
+   Info Overlay - Bottom Right
+   =========================== */
+.info-overlay {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px 25px;
+    max-width: 300px;
+    font-size: 0.75rem;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+.info-overlay h4 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-overlay ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-overlay li {
+    margin-bottom: 5px;
+    padding-left: 15px;
+    position: relative;
+}
+
+.info-overlay li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+}
+
+/* ===========================
+   Error Screen
+   =========================== */
+.error-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.error-content {
+    text-align: center;
+    background: #ffffff;
+    color: #000000;
+    padding: 60px;
+    max-width: 600px;
+    border: 1px solid #000000;
+}
+
+.error-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.error-content p {
+    font-size: 1rem;
+    margin-bottom: 40px;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+.retry-btn,
+.back-btn {
+    background: #000000;
+    color: white;
+    border: 1px solid #000000;
+    padding: 15px 35px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: all 0.2s;
+}
+
+.retry-btn:hover,
+.back-btn:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .control-panel {
+        flex-wrap: wrap;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+    }
+
+    .status-overlay {
+        top: 15px;
+        right: 15px;
+        font-size: 0.75rem;
+        padding: 15px 20px;
+    }
+
+    .info-overlay {
+        display: none;
+    }
+}

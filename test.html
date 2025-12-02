@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediaPipe Test</title>
+</head>
+<body>
+    <h1>MediaPipe Loading Test</h1>
+    <div id="status">Loading...</div>
+
+    <script type="module">
+        async function test() {
+            const statusDiv = document.getElementById('status');
+
+            try {
+                statusDiv.innerHTML = 'Loading MediaPipe from CDN...';
+
+                // Import directly as ES module
+                const vision = await import('https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.8');
+
+                statusDiv.innerHTML = '✅ MediaPipe loaded successfully!<br>';
+                statusDiv.innerHTML += 'Available: ' + Object.keys(vision).join(', ');
+
+                window.vision = vision;
+            } catch (error) {
+                statusDiv.innerHTML = '❌ Error: ' + error.message;
+                console.error('Full error:', error);
+            }
+        }
+
+        test();
+    </script>
+</body>
+</html>

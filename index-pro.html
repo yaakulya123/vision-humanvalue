@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vision Human Value - Real-Time Computer Vision System</title>
+    <link rel="stylesheet" href="css/style-pro.css">
+</head>
+<body class="landing-page">
+    <div class="landing-container">
+        <div class="landing-content">
+            <h1 class="title">Vision Human Value</h1>
+            <p class="subtitle">Real-Time Computer Vision Tracking System</p>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-title">Hand Tracking</div>
+                    <div class="feature-desc">21 landmarks per hand with precise fingertip detection</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-title">Body Pose</div>
+                    <div class="feature-desc">33-point full body skeleton tracking in real-time</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-title">Face Mesh</div>
+                    <div class="feature-desc">478 facial landmarks with high-precision detection</div>
+                </div>
+            </div>
+
+            <button id="enterBtn" class="enter-button">
+                Enter System
+            </button>
+
+            <div class="info">
+                <p>This application requires camera access for real-time computer vision processing.</p>
+                <p>All processing occurs locally in your browser. No data is transmitted to external servers.</p>
+                <p>Compatible with Chrome, Edge, Firefox, and Safari (version 15+).</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('enterBtn').addEventListener('click', () => {
+            window.location.href = 'app-pro.html';
+        });
+    </script>
+</body>
+</html>
