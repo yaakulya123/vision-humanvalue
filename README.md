@@ -1,31 +1,35 @@
-# Vision Human Value
+# Surveillance - Human Value
 
-Real-time computer vision tracking in your browser. Track body pose, hand movements, and facial features using MediaPipe and WebGL - all running locally with no data sent to any server.
+Real-time computer vision tracking system built with MediaPipe and vanilla JavaScript.
 
 ![Status](https://img.shields.io/badge/status-active-success.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-## ✨ Features
+## Overview
 
-- **👋 Hand Tracking** - Track up to 2 hands with 21 landmarks each, including fingertip detection
-- **🧍 Body Pose** - Full body skeleton tracking with 33 landmarks
-- **😊 Face Detection** - Facial mesh tracking with 478 landmarks
-- **🎨 Real-time Visualization** - Live overlay of tracking data on video feed
-- **🔒 Privacy-First** - All processing happens in your browser, no data sent to servers
-- **⚡ High Performance** - Optimized for 30+ FPS on modern desktops
-- **🎯 Easy to Use** - Just open the URL and allow camera access
+This is a web-based surveillance system that provides real-time tracking of hands, faces, and motion detection directly in the browser. All processing happens client-side using MediaPipe's vision models - no data is transmitted to external servers.
 
-## 🚀 Quick Start
+## Features
+
+- **Hand Tracking** - Detect up to 2 hands simultaneously with 21 landmarks per hand
+- **Face Detection** - Track up to 5 faces with 478 facial landmarks each
+- **Motion Detection** - Frame-by-frame pixel difference analysis with adjustable sensitivity
+- **Real-time Visualization** - Live overlay of tracking data on video feed
+- **Privacy-First** - All processing happens in your browser, no data sent to servers
+- **High Performance** - Optimized for 30+ FPS on modern hardware
+- **Easy to Use** - Just open the URL and allow camera access
+
+## Quick Start
 
 ### Local Development
 
-1. **Clone the repository**
+1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/vision-humanvalue.git
+   git clone https://github.com/yaakulya123/vision-humanvalue.git
    cd vision-humanvalue
    ```
 
-2. **Start a local server**
+2. Start a local server
    ```bash
    # Using Python 3
    python3 -m http.server 8000
@@ -37,14 +41,14 @@ Real-time computer vision tracking in your browser. Track body pose, hand moveme
    php -S localhost:8000
    ```
 
-3. **Open in browser**
+3. Open in browser
    ```
    http://localhost:8000
    ```
 
-4. **Allow camera access** when prompted
+4. Allow camera access when prompted
 
-5. **Click "Enter Experience"** to start tracking
+5. Click "Enter System" to start tracking
 
 ### Requirements
 
@@ -53,102 +57,49 @@ Real-time computer vision tracking in your browser. Track body pose, hand moveme
 - HTTPS or localhost (required for camera access)
 - Decent CPU/GPU (for real-time processing)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 vision-humanvalue/
 ├── index.html          # Landing page
-├── app.html            # Main application
+├── app.html            # Main application page
 ├── css/
-│   └── style.css       # Styling
+│   └── style.css       # Professional black/white theme
 ├── js/
-│   ├── main.js         # Application controller
-│   ├── camera.js       # Camera handling
-│   ├── hands.js        # Hand tracking module
-│   ├── pose.js         # Pose tracking module
-│   └── face.js         # Face detection module
+│   └── main.js         # Main application controller
 ├── package.json        # Project metadata
 ├── vercel.json         # Vercel deployment config
 └── README.md           # This file
 ```
 
-## 🎮 Controls
+## Controls
 
-**In-app Controls:**
-- **👋 Hands Button** - Toggle hand tracking on/off
-- **🧍 Pose Button** - Toggle pose tracking on/off
-- **😊 Face Button** - Toggle face detection on/off
-- **❌ Exit Button** - Return to landing page
+### In-app Controls
+- **Hands Button** - Toggle hand tracking on/off
+- **Face Button** - Toggle face detection on/off
+- **Motion Button** - Toggle motion detection on/off
+- **Exit Button** - Return to landing page
 
-**Status Display:**
+### Status Display
 - **FPS** - Current frames per second
-- **Hands** - Number of hands detected
-- **Pose** - Body pose detection status
-- **Face** - Number of faces detected
+- **HANDS_DETECTED** - Number of hands detected (0-2)
+- **FACE_COUNT** - Number of faces detected (0-5)
+- **MOTION** - Motion detection status (DETECTED/NONE)
 
-## 🌐 Deploy to Vercel
-
-### Method 1: Vercel CLI
-
-1. **Install Vercel CLI**
-   ```bash
-   npm install -g vercel
-   ```
-
-2. **Deploy**
-   ```bash
-   cd vision-humanvalue
-   vercel
-   ```
-
-3. **Follow prompts** and your app will be live!
-
-### Method 2: GitHub Integration
-
-1. **Push to GitHub**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin https://github.com/yourusername/vision-humanvalue.git
-   git push -u origin main
-   ```
-
-2. **Connect to Vercel**
-   - Go to [vercel.com](https://vercel.com)
-   - Click "New Project"
-   - Import your GitHub repository
-   - Click "Deploy"
-
-3. **Done!** Your app is now live at `your-project.vercel.app`
-
-### Method 3: Drag & Drop
-
-1. Go to [vercel.com](https://vercel.com)
-2. Drag and drop the entire `vision-humanvalue` folder
-3. Wait for deployment to complete
-4. Your app is live!
-
-## 🔧 Technology Stack
+## Technology Stack
 
 ### Core Technologies
-- **Vanilla JavaScript** - No framework dependencies
-- **MediaPipe Tasks Vision** - Computer vision models
+- **Vanilla JavaScript ES6** - No framework dependencies
+- **MediaPipe Tasks Vision 0.10.8** - Computer vision models
 - **WebGL** - GPU-accelerated processing
 - **HTML5 Canvas** - Real-time rendering
+- **getUserMedia API** - Camera access
 
 ### MediaPipe Models
 - **HandLandmarker** - 21-point hand tracking
-- **PoseLandmarker** - 33-point body pose
 - **FaceLandmarker** - 478-point face mesh
 
-### Hosting
-- **Vercel** - Recommended (automatic HTTPS, fast CDN)
-- **Netlify** - Alternative option
-- **GitHub Pages** - Free static hosting
-- **Any static host** - Works anywhere!
-
-## 📊 Performance
+## Performance
 
 **Typical Performance (Desktop):**
 - Resolution: 1280x720
@@ -161,9 +112,28 @@ vision-humanvalue/
 - Close other tabs to free up resources
 - Use Chrome or Edge for best performance
 - Ensure good lighting for better detection
-- Keep full body visible for pose tracking
+- Toggle off features you don't need
 
-## 🐛 Troubleshooting
+## Configuration
+
+You can adjust these values in `main.js`:
+
+```javascript
+// Motion detection sensitivity
+this.motionThreshold = 30;      // RGB difference threshold (0-255)
+this.motionSensitivity = 0.02;  // % of pixels needed (0.0-1.0)
+
+// MediaPipe confidence thresholds
+minHandDetectionConfidence: 0.5
+minFaceDetectionConfidence: 0.5
+
+// Camera constraints
+width: { ideal: 1280 }
+height: { ideal: 720 }
+frameRate: { ideal: 30 }
+```
+
+## Troubleshooting
 
 ### Camera Not Working
 
@@ -186,56 +156,48 @@ vision-humanvalue/
 
 **Low FPS (< 15)**
 - Close other browser tabs
-- Try a lower camera resolution
-- Disable features you don't need
+- Toggle off features you don't need
 - Use Chrome for best performance
+- Check CPU usage in task manager
 
 **Tracking Not Working**
 - Ensure good lighting
-- Position yourself correctly:
-  - Hands: Clearly visible in frame
-  - Pose: Full body visible
-  - Face: Looking at camera
+- Position yourself correctly in frame
 - Move slower for better tracking
+- Check if feature is toggled on
 
 ### Browser Compatibility
 
 **Safari Issues**
 - Must use Safari 15+ for full support
 - Camera permissions are stricter
-- May need to enable WebGL
+- May need to enable WebGL in settings
 
 **Firefox Issues**
 - Generally works well
 - Slightly slower than Chrome
 - Enable hardware acceleration for better performance
 
-## 🔒 Privacy & Security
+## Privacy & Security
 
-- **No data collection** - Nothing is sent to any server
-- **No analytics** - No tracking or telemetry
-- **No storage** - No data saved locally
-- **Camera-only** - Only requires camera permission
-- **Open source** - Code is fully transparent
+- No data collection - Nothing is sent to any server
+- No analytics - No tracking or telemetry
+- No storage - No data saved locally
+- Camera-only - Only requires camera permission
+- Open source - Code is fully transparent
 
 All processing happens locally in your browser using MediaPipe's WebAssembly models.
 
-## 📝 License
+## License
 
 MIT License - See LICENSE file for details
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- **MediaPipe** - Google's ML framework
-- **Intel RealSense** - Original inspiration from RealSense project
-- **OpenCV** - Computer vision concepts
-
-## 📧 Contact
-
-For questions or feedback:
-- GitHub Issues: [Create an issue](https://github.com/yourusername/vision-humanvalue/issues)
-- Email: your.email@example.com
+- MediaPipe - Google's ML framework for vision tasks
+- Intel RealSense - Original inspiration from RealSense project
+- OpenCV - Computer vision concepts
 
 ---
 
-**Made with ❤️ using MediaPipe and Web Technologies**
+Built with MediaPipe and Web Technologies
